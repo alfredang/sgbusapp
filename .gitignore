@@ -1,0 +1,8 @@
+.env
+Config/Local.xcconfig
+*.p8
+DerivedData/
+build/
+*.xcarchive
+*.ipa
+.DS_Store

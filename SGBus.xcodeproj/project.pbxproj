@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		126D6919B46C748DED02941A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791A7A34FB1B423C71BD0900 /* Assets.xcassets */; };
+		3620BB0943504F71A10C9E10 /* BusArrivalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A28EB57BF331490FB9EDF /* BusArrivalsViewModel.swift */; };
+		50EF5F5D9099B24140958192 /* SGBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BDE31A25385B545F1EF22 /* SGBusApp.swift */; };
+		9BD4DD3942A885CF676E4635 /* LTADataMallClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5F48E8D49DDAB7F5A9815 /* LTADataMallClient.swift */; };
+		E91EF975E56C396D6F6D3FF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D9B7B2F96673FB3C8BEA9 /* ContentView.swift */; };
+		EDCBFC86CE612D53C483151E /* BusModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA28EE79A194767646DD36 /* BusModels.swift */; };
+		F505C04320BCB0B4990897B8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B2546FEA075A4A0E6753188C /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		093A28EB57BF331490FB9EDF /* BusArrivalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusArrivalsViewModel.swift; sourceTree = "<group>"; };
+		271BDE31A25385B545F1EF22 /* SGBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGBusApp.swift; sourceTree = "<group>"; };
+		2DCA28EE79A194767646DD36 /* BusModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModels.swift; sourceTree = "<group>"; };
+		593620956BCE540D9C45FA0E /* SGBus.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SGBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F3BBB2DDE16D1BD214876A0 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
+		791A7A34FB1B423C71BD0900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E7C30403A258DD581F60D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7EC5F48E8D49DDAB7F5A9815 /* LTADataMallClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTADataMallClient.swift; sourceTree = "<group>"; };
+		B2546FEA075A4A0E6753188C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C50D9B7B2F96673FB3C8BEA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08DD675B2897B30A67408A1C = {
+			isa = PBXGroup;
+			children = (
+				A804B4E2446BAFBB8EB028EA /* Config */,
+				872BAD167214F67431D8E8C2 /* SGBusApp */,
+				7063033DB9825871E7A850A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7063033DB9825871E7A850A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				593620956BCE540D9C45FA0E /* SGBus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		872BAD167214F67431D8E8C2 /* SGBusApp */ = {
+			isa = PBXGroup;
+			children = (
+				791A7A34FB1B423C71BD0900 /* Assets.xcassets */,
+				7E7C30403A258DD581F60D53 /* Info.plist */,
+				B2546FEA075A4A0E6753188C /* PrivacyInfo.xcprivacy */,
+				271BDE31A25385B545F1EF22 /* SGBusApp.swift */,
+				F74CC8028D7299B865FECA2D /* Models */,
+				C058AD60A89B420B3255C0CF /* Services */,
+				A4452880D3D2D89EAECA2B4C /* ViewModels */,
+				EC7E5296B6644D7AB00C2B79 /* Views */,
+			);
+			path = SGBusApp;
+			sourceTree = "<group>";
+		};
+		A4452880D3D2D89EAECA2B4C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				093A28EB57BF331490FB9EDF /* BusArrivalsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A804B4E2446BAFBB8EB028EA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5F3BBB2DDE16D1BD214876A0 /* Local.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C058AD60A89B420B3255C0CF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7EC5F48E8D49DDAB7F5A9815 /* LTADataMallClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EC7E5296B6644D7AB00C2B79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C50D9B7B2F96673FB3C8BEA9 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F74CC8028D7299B865FECA2D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DCA28EE79A194767646DD36 /* BusModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB902476CD718BCAE643551F /* SGBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0771401716D5F87BF709386 /* Build configuration list for PBXNativeTarget "SGBus" */;
+			buildPhases = (
+				6771ED99C69F861453DFE949 /* Sources */,
+				5F39694E73025FC039D74209 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SGBus;
+			packageProductDependencies = (
+			);
+			productName = SGBus;
+			productReference = 593620956BCE540D9C45FA0E /* SGBus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B6366A03EA2ADFCEAA6D84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					AB902476CD718BCAE643551F = {
+						DevelopmentTeam = GU9WTSTX9M;
+					};
+				};
+			};
+			buildConfigurationList = 96B4117E1460C2E46D33BDD3 /* Build configuration list for PBXProject "SGBus" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 08DD675B2897B30A67408A1C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7063033DB9825871E7A850A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB902476CD718BCAE643551F /* SGBus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F39694E73025FC039D74209 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				126D6919B46C748DED02941A /* Assets.xcassets in Resources */,
+				F505C04320BCB0B4990897B8 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6771ED99C69F861453DFE949 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3620BB0943504F71A10C9E10 /* BusArrivalsViewModel.swift in Sources */,
+				EDCBFC86CE612D53C483151E /* BusModels.swift in Sources */,
+				E91EF975E56C396D6F6D3FF9 /* ContentView.swift in Sources */,
+				9BD4DD3942A885CF676E4635 /* LTADataMallClient.swift in Sources */,
+				50EF5F5D9099B24140958192 /* SGBusApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		015AA3B0D1AC0D837E710CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GU9WTSTX9M;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		08C448B99357AEFD6284A7E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F3BBB2DDE16D1BD214876A0 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = SGBusApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alfredang.sgbus;
+				PRODUCT_NAME = "SG Bus";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				UIRequiredDeviceCapabilities = arm64;
+			};
+			name = Debug;
+		};
+		3DC527B3E50BCF13F8432C2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F3BBB2DDE16D1BD214876A0 /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = SGBusApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alfredang.sgbus;
+				PRODUCT_NAME = "SG Bus";
+				PROVISIONING_PROFILE_SPECIFIER = "SG Bus App Store Local";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				UIRequiredDeviceCapabilities = arm64;
+			};
+			name = Release;
+		};
+		7B617E6DB5ABD6AF9D6300F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GU9WTSTX9M;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96B4117E1460C2E46D33BDD3 /* Build configuration list for PBXProject "SGBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B617E6DB5ABD6AF9D6300F2 /* Debug */,
+				015AA3B0D1AC0D837E710CD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E0771401716D5F87BF709386 /* Build configuration list for PBXNativeTarget "SGBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08C448B99357AEFD6284A7E1 /* Debug */,
+				3DC527B3E50BCF13F8432C2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B6366A03EA2ADFCEAA6D84 /* Project object */;
+}
