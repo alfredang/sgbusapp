@@ -3,6 +3,13 @@ Config/Local.xcconfig
 *.p8
 DerivedData/
 build/
+build-device/
+build-sim/
 *.xcarchive
 *.ipa
 .DS_Store
+.playwright-mcp/
+__pycache__/
+
+# Local skill scaffolding that contains secrets (Apple ID / API keys)
+.claude/skills/app-store-submission/create-env/

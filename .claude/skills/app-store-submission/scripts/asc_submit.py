@@ -101,23 +101,17 @@ def cmd_set_metadata(a):
     s, infos = jget("GET", f"/v1/apps/{aid}/appInfos", tok)
     info_id = infos["data"][0]["id"]
     s, locs = jget("GET", f"/v1/appInfos/{info_id}/appInfoLocalizations", tok)
-    info_attrs = {}
-    if os.environ.get("ASC_PRIVACY_POLICY_URL"): info_attrs["privacyPolicyUrl"] = os.environ["ASC_PRIVACY_POLICY_URL"]
-    if os.environ.get("ASC_SUBTITLE"): info_attrs["subtitle"] = os.environ["ASC_SUBTITLE"]
-    if info_attrs:
+    if os.environ.get("ASC_PRIVACY_POLICY_URL"):
         lid = locs["data"][0]["id"]
         s, _ = call("PATCH", f"/v1/appInfoLocalizations/{lid}",
                     {"data": {"type": "appInfoLocalizations", "id": lid,
-                              "attributes": info_attrs}}, tok)
-        print("appInfo (privacyPolicyUrl/subtitle):", s)
+                              "attributes": {"privacyPolicyUrl": os.environ["ASC_PRIVACY_POLICY_URL"]}}}, tok)
+        print("privacyPolicyUrl:", s)
     # support/marketing URLs on the version localization
     s, vlocs = jget("GET", f"/v1/appStoreVersions/{vid}/appStoreVersionLocalizations", tok)
     attrs = {}
     if os.environ.get("ASC_SUPPORT_URL"): attrs["supportUrl"] = os.environ["ASC_SUPPORT_URL"]
     if os.environ.get("ASC_MARKETING_URL"): attrs["marketingUrl"] = os.environ["ASC_MARKETING_URL"]
-    if os.environ.get("ASC_DESCRIPTION"): attrs["description"] = os.environ["ASC_DESCRIPTION"]
-    if os.environ.get("ASC_KEYWORDS"): attrs["keywords"] = os.environ["ASC_KEYWORDS"]
-    if os.environ.get("ASC_PROMO_TEXT"): attrs["promotionalText"] = os.environ["ASC_PROMO_TEXT"]
     if attrs:
         vlid = vlocs["data"][0]["id"]
         s, _ = call("PATCH", f"/v1/appStoreVersionLocalizations/{vlid}",

@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		126D6919B46C748DED02941A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791A7A34FB1B423C71BD0900 /* Assets.xcassets */; };
+		186158FC7A885349BA3CC89B /* OneMapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C12D9C70D205D3CF47A4AD2 /* OneMapClient.swift */; };
 		3620BB0943504F71A10C9E10 /* BusArrivalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A28EB57BF331490FB9EDF /* BusArrivalsViewModel.swift */; };
 		50EF5F5D9099B24140958192 /* SGBusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BDE31A25385B545F1EF22 /* SGBusApp.swift */; };
+		9A97AA5E8183EF23CD63F606 /* BusStopStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8F9A6860EB1B6591482FB /* BusStopStore.swift */; };
 		9BD4DD3942A885CF676E4635 /* LTADataMallClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5F48E8D49DDAB7F5A9815 /* LTADataMallClient.swift */; };
+		A8AB350A3BBE178ED60D3905 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845546BC61015B2E04C63CDE /* LocationManager.swift */; };
 		E91EF975E56C396D6F6D3FF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50D9B7B2F96673FB3C8BEA9 /* ContentView.swift */; };
 		EDCBFC86CE612D53C483151E /* BusModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA28EE79A194767646DD36 /* BusModels.swift */; };
 		F505C04320BCB0B4990897B8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B2546FEA075A4A0E6753188C /* PrivacyInfo.xcprivacy */; };
@@ -18,13 +21,16 @@
 
 /* Begin PBXFileReference section */
 		093A28EB57BF331490FB9EDF /* BusArrivalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusArrivalsViewModel.swift; sourceTree = "<group>"; };
+		0BD8F9A6860EB1B6591482FB /* BusStopStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopStore.swift; sourceTree = "<group>"; };
 		271BDE31A25385B545F1EF22 /* SGBusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGBusApp.swift; sourceTree = "<group>"; };
 		2DCA28EE79A194767646DD36 /* BusModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModels.swift; sourceTree = "<group>"; };
 		593620956BCE540D9C45FA0E /* SGBus.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SGBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3BBB2DDE16D1BD214876A0 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
 		791A7A34FB1B423C71BD0900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C12D9C70D205D3CF47A4AD2 /* OneMapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMapClient.swift; sourceTree = "<group>"; };
 		7E7C30403A258DD581F60D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7EC5F48E8D49DDAB7F5A9815 /* LTADataMallClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTADataMallClient.swift; sourceTree = "<group>"; };
+		845546BC61015B2E04C63CDE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B2546FEA075A4A0E6753188C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C50D9B7B2F96673FB3C8BEA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +87,10 @@
 		C058AD60A89B420B3255C0CF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0BD8F9A6860EB1B6591482FB /* BusStopStore.swift */,
+				845546BC61015B2E04C63CDE /* LocationManager.swift */,
 				7EC5F48E8D49DDAB7F5A9815 /* LTADataMallClient.swift */,
+				7C12D9C70D205D3CF47A4AD2 /* OneMapClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,8 +184,11 @@
 			files = (
 				3620BB0943504F71A10C9E10 /* BusArrivalsViewModel.swift in Sources */,
 				EDCBFC86CE612D53C483151E /* BusModels.swift in Sources */,
+				9A97AA5E8183EF23CD63F606 /* BusStopStore.swift in Sources */,
 				E91EF975E56C396D6F6D3FF9 /* ContentView.swift in Sources */,
 				9BD4DD3942A885CF676E4635 /* LTADataMallClient.swift in Sources */,
+				A8AB350A3BBE178ED60D3905 /* LocationManager.swift in Sources */,
+				186158FC7A885349BA3CC89B /* OneMapClient.swift in Sources */,
 				50EF5F5D9099B24140958192 /* SGBusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,7 +261,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = SGBusApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -260,7 +272,7 @@
 				PRODUCT_NAME = "SG Bus";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				UIRequiredDeviceCapabilities = arm64;
 			};
 			name = Debug;
@@ -273,7 +285,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = SGBusApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -285,7 +297,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "SG Bus App Store Local";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				UIRequiredDeviceCapabilities = arm64;
 			};
 			name = Release;

@@ -1,13 +1,13 @@
 <div align="center">
 
-# SG Bus
+# SG Bus Live
 
 [![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
 [![iOS](https://img.shields.io/badge/iOS-17.0%2B-blue.svg)](https://developer.apple.com/ios/)
 [![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-0A84FF.svg)](https://developer.apple.com/xcode/swiftui/)
 [![License](https://img.shields.io/badge/License-Proprietary-lightgrey.svg)](#license)
 
-**Fast Singapore bus arrival lookups for iPhone and iPad.**
+**Live Singapore bus arrival times for iPhone — find the nearest stop by GPS, search by postal code or bus stop ID, then track any service.**
 
 [Report Bug](https://github.com/alfredang/sgbusapp/issues) · [Request Feature](https://github.com/alfredang/sgbusapp/issues)
 
@@ -15,48 +15,56 @@
 
 ## Screenshot
 
-![SG Bus iPhone screenshot](screenshots/sgbus-iphone-raw.png)
+![SG Bus Live — nearby stops and live arrivals](screenshot.png)
 
 ## About
 
-SG Bus is a native SwiftUI app for checking live Singapore bus arrival timings from LTA DataMall. It focuses on quick stop selection, manual refresh, and a compact view of the next three arrivals for each service.
+SG Bus Live is a native SwiftUI app for checking live Singapore bus arrival timings from LTA DataMall. It finds the bus stops nearest to you using GPS, lets you jump straight to a stop by postal code or bus stop ID, and shows the next three arrivals for every service — with the option to filter down to a single bus number.
 
 Key features:
 
-- Search common Singapore bus stops by stop code, road, or landmark.
-- View live arrivals from LTA DataMall BusArrivalv2.
-- Compare the next three bus timings for each service.
-- See useful load and vehicle-type labels such as seats, standing, limited, single, double, and bendy.
-- Pull to refresh or use the dedicated refresh action.
+- **GPS nearest stops** — auto-detects your location and lists the closest bus stops with walking distance.
+- **Search at the top** — enter a 6-digit postal code (geocoded via OneMap) or a 5-digit bus stop ID; or search by road / landmark.
+- **Pick a bus number** — tap a service chip to filter the arrivals to just that bus.
+- **Live arrivals** — the next three timings per service from LTA DataMall, with load (seats / standing / limited) and vehicle-type labels.
+- **Pull to refresh** or use the dedicated refresh action.
 
 ## Tech Stack
 
 | Layer | Technology |
 | --- | --- |
 | App | Swift 6, SwiftUI |
-| Platform | iOS 17.0+ |
+| Platform | iOS 17.0+ (iPhone) |
+| Location | CoreLocation (nearest-stop detection) |
 | Networking | URLSession, async/await |
-| Data Source | LTA DataMall BusArrivalv2 |
+| Data Sources | LTA DataMall (BusArrival, BusStops), OneMap (postal-code geocoding) |
 | Project Generation | XcodeGen `project.yml` |
-| Distribution | Xcode archive and App Store metadata scripts |
+| Distribution | Xcode archive + App Store Connect API scripts |
 
 ## Architecture
 
 ```text
-SwiftUI Views
+SwiftUI Views (ContentView)
     |
     v
-BusArrivalsViewModel
+BusArrivalsViewModel  ──────────────┐
+    |              |                │
+    v              v                v
+LocationManager  BusStopStore   OneMapClient
+ (CoreLocation)   (cached LTA       (postal code
+    |              bus stops)        -> coordinate)
+    |              |
+    v              v
+        LTADataMallClient
     |
     v
-LTADataMallClient
-    |
-    v
-LTA DataMall BusArrivalv2 API
-    |
-    v
-BusArrivalResponse / BusService / NextBus
+LTA DataMall (BusArrival / BusStops)
 ```
+
+- **LocationManager** wraps CoreLocation for a one-shot GPS fix.
+- **BusStopStore** downloads the full LTA bus-stop directory (with coordinates) once, caches it on disk, and answers nearest-by-GPS, exact-code lookup, and text search.
+- **OneMapClient** geocodes a Singapore postal code to a coordinate.
+- **LTADataMallClient** fetches live arrivals and the paginated bus-stop list.
 
 ## Project Structure
 
@@ -68,15 +76,14 @@ BusArrivalResponse / BusService / NextBus
 │   ├── Local.xcconfig.example
 │   └── Local.xcconfig          # local only, ignored by git
 ├── SGBusApp/
-│   ├── Models/
-│   ├── Services/
-│   ├── ViewModels/
-│   ├── Views/
-│   ├── Assets.xcassets/
+│   ├── Models/                 # BusStop, BusService, NextBus
+│   ├── Services/               # LTADataMallClient, BusStopStore, LocationManager, OneMapClient
+│   ├── ViewModels/             # BusArrivalsViewModel
+│   ├── Views/                  # ContentView
+│   ├── Assets.xcassets/        # AppIcon
 │   └── SGBusApp.swift
 ├── screenshots/
-│   └── sgbus-iphone-raw.png
-├── scripts/
+├── scripts/                    # App Store Connect automation + icon generator
 ├── project.yml
 └── ExportOptions.plist
 ```
@@ -111,29 +118,24 @@ BusArrivalResponse / BusService / NextBus
    LTA_ACCOUNT_KEY = your_lta_datamall_account_key
    ```
 
-4. Open the Xcode project.
+4. Generate and open the Xcode project.
 
    ```bash
+   xcodegen generate
    open SGBus.xcodeproj
    ```
 
-5. Build and run the `SGBus` scheme from Xcode.
-
-### Regenerate Project
-
-If you edit `project.yml`, regenerate the Xcode project with:
-
-```bash
-xcodegen generate
-```
+5. Build and run the `SGBus` scheme. On first launch, allow location access to see nearby stops.
 
 ## Configuration
 
 `Config/Local.xcconfig` is intentionally ignored by git because it contains the LTA DataMall account key. Keep production keys out of source control and use the committed `Config/Local.xcconfig.example` as the setup template.
 
+`NSLocationWhenInUseUsageDescription` is set in `project.yml` so the app can request location to find nearby stops.
+
 ## App Store
 
-App Store metadata lives in `AppStore/metadata.md`. Submission helper scripts are available in `scripts/` for App Store Connect automation.
+App Store metadata lives in `AppStore/metadata.md`. App Store Connect automation scripts are in `scripts/` (`asc_submit.py` for metadata/screenshots/submission, `asc_jwt.swift` for JWT signing, `make_app_icon.swift` for the app icon).
 
 ## Contributing
 
@@ -148,5 +150,6 @@ No open-source license has been published for this repository yet. All rights re
 
 ## Acknowledgements
 
-- Singapore Land Transport Authority DataMall for bus arrival data.
-- Apple SwiftUI and iOS platform tooling.
+- Singapore Land Transport Authority DataMall for bus arrival and bus stop data.
+- OneMap for postal-code geocoding.
+- Apple SwiftUI, CoreLocation, and iOS platform tooling.

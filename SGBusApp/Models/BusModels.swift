@@ -1,25 +1,34 @@
 import Foundation
 
-struct BusStop: Identifiable, Hashable {
-    let id: String
+struct BusStop: Codable, Identifiable, Hashable {
+    let code: String
     let roadName: String
     let description: String
+    let latitude: Double
+    let longitude: Double
+    var distanceMeters: Double?
 
+    var id: String { code }
     var title: String { description }
-    var subtitle: String { "\(roadName) · \(id)" }
+    var subtitle: String { "\(roadName) · \(code)" }
 
-    static let popular: [BusStop] = [
-        .init(id: "01012", roadName: "Victoria St", description: "Hotel Grand Pacific"),
-        .init(id: "01013", roadName: "Victoria St", description: "St. Joseph's Ch"),
-        .init(id: "01112", roadName: "Victoria St", description: "Bugis Stn Exit A"),
-        .init(id: "02049", roadName: "Bras Basah Rd", description: "Raffles Hotel"),
-        .init(id: "02151", roadName: "Stamford Rd", description: "Capitol Bldg"),
-        .init(id: "03217", roadName: "Orchard Rd", description: "Opp Somerset Stn"),
-        .init(id: "09047", roadName: "Bayfront Ave", description: "Marina Bay Sands"),
-        .init(id: "14141", roadName: "Holland Rd", description: "Holland Village"),
-        .init(id: "22009", roadName: "Jurong Gateway Rd", description: "Jurong East Int"),
-        .init(id: "75009", roadName: "Woodlands Rd", description: "Bt Panjang Temp Bus Pk")
-    ]
+    var distanceText: String? {
+        guard let distanceMeters else { return nil }
+        if distanceMeters < 1000 { return "\(Int(distanceMeters.rounded())) m away" }
+        return String(format: "%.1f km away", distanceMeters / 1000)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case code = "BusStopCode"
+        case roadName = "RoadName"
+        case description = "Description"
+        case latitude = "Latitude"
+        case longitude = "Longitude"
+    }
+}
+
+struct BusStopsResponse: Decodable {
+    let value: [BusStop]
 }
 
 struct BusArrivalResponse: Decodable {
