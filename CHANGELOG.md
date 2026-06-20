@@ -10,6 +10,12 @@ release).
 
 ## [Unreleased]
 
+### Added
+- Bottom tab bar with four tabs: Arrivals, Favorites, Feedback, About.
+- Favorites — save bus stops (persisted on-device) and recall them; swipe to delete.
+- Feedback tab — send feature requests / bug reports via WhatsApp (+65 8866 6375).
+- About tab — app description, developer (Tertiary Infotech Academy Pte Ltd), data credits, version.
+
 ## [1.0] — 2026-06-21
 
 Initial App Store release (iPhone only). Build 4.

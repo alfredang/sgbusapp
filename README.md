@@ -21,11 +21,15 @@
 
 SG Bus Live is a native SwiftUI app for checking live Singapore bus arrival timings from LTA DataMall. It finds the bus stops nearest to you using GPS, lets you jump straight to a stop by postal code or bus stop ID, and shows the next three arrivals for every service — with the option to filter down to a single bus number.
 
+The app is organised into four bottom tabs: **Arrivals**, **Favorites**, **Feedback**, and **About**.
+
 Key features:
 
 - **GPS nearest stops** — auto-detects your location and lists the closest bus stops with walking distance.
 - **Search at the top** — enter a 6-digit postal code (geocoded via OneMap) or a 5-digit bus stop ID; or search by road / landmark.
 - **Pick a bus number** — tap a service chip to filter the arrivals to just that bus.
+- **Favorites** — save your regular stops (persisted on-device) and recall them from the Favorites tab.
+- **Feedback** — send feature requests or bug reports over WhatsApp from the Feedback tab.
 - **Live arrivals** — the next three timings per service from LTA DataMall, with load (seats / standing / limited) and vehicle-type labels.
 - **Pull to refresh** or use the dedicated refresh action.
 
