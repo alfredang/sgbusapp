@@ -118,6 +118,7 @@ def cmd_set_metadata(a):
     if os.environ.get("ASC_DESCRIPTION"): attrs["description"] = os.environ["ASC_DESCRIPTION"]
     if os.environ.get("ASC_KEYWORDS"): attrs["keywords"] = os.environ["ASC_KEYWORDS"]
     if os.environ.get("ASC_PROMO_TEXT"): attrs["promotionalText"] = os.environ["ASC_PROMO_TEXT"]
+    if os.environ.get("ASC_WHATS_NEW"): attrs["whatsNew"] = os.environ["ASC_WHATS_NEW"]
     if attrs:
         vlid = vlocs["data"][0]["id"]
         s, _ = call("PATCH", f"/v1/appStoreVersionLocalizations/{vlid}",
