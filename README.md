@@ -9,6 +9,8 @@
 
 **Live Singapore bus arrival times for iPhone — find the nearest stop by GPS, search by postal code or bus stop ID, then track any service.**
 
+<a href="https://apps.apple.com/us/app/sg-bus-live/id6782321279"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="48"></a>
+
 [Report Bug](https://github.com/alfredang/sgbusapp/issues) · [Request Feature](https://github.com/alfredang/sgbusapp/issues)
 
 </div>
@@ -138,6 +140,10 @@ LTA DataMall (BusArrival / BusStops)
 `NSLocationWhenInUseUsageDescription` is set in `project.yml` so the app can request location to find nearby stops.
 
 ## App Store
+
+**SG Bus Live is live on the App Store** — [download it here](https://apps.apple.com/us/app/sg-bus-live/id6782321279).
+
+<a href="https://apps.apple.com/us/app/sg-bus-live/id6782321279"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="48"></a>
 
 App Store metadata lives in `AppStore/metadata.md`. App Store Connect automation scripts are in `scripts/` (`asc_submit.py` for metadata/screenshots/submission, `asc_jwt.swift` for JWT signing, `make_app_icon.swift` for the app icon).
 
